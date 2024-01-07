@@ -18,7 +18,7 @@ export default async function Orders() {
   const { token } = await getMeUser({
     nullUserRedirect: `/login?error=${encodeURIComponent(
       'You must be logged in to view your orders.',
-    )}&redirect=${encodeURIComponent('/orders')}`,
+    )}&redirect=${encodeURIComponent('/account/orders')}`,
   })
 
   let orders: Order[] | null = null

@@ -1,10 +1,12 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 
-import { Header as HeaderType, User } from '../../../../payload/payload-types'
+import { Header as HeaderType } from '../../../../payload/payload-types'
 import { useAuth } from '../../../_providers/Auth'
+import { Button } from '../../Button'
 import { CartLink } from '../../CartLink'
 import { CMSLink } from '../../Link'
 
@@ -28,14 +30,21 @@ export const HeaderNav: React.FC<{ header: HeaderType }> = ({ header }) => {
       {navItems.map(({ link }, i) => {
         return <CMSLink key={i} {...link} appearance="none" />
       })}
-      <CartLink />
-      {user && <Link href="/account">Account</Link>}
-      {!user && (
-        <React.Fragment>
-          <Link href="/login">Login</Link>
-          <Link href="/create-account">Create Account</Link>
-        </React.Fragment>
+      {user && (
+        <Link href="/account">
+          <Image src="/assets/icons/user.svg" alt="user" width={20} height={20} />
+        </Link>
       )}
+      {!user && (
+        <Button
+          el="link"
+          href="/login"
+          label="Login"
+          appearance="primary"
+          onClick={() => (window.location.href = '/login')}
+        />
+      )}
+      {user && <CartLink />}
     </nav>
   )
 }
