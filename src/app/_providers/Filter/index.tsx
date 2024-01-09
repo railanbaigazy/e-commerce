@@ -28,7 +28,8 @@ export const FilterProvider = ({ children }: { children: React.ReactNode }) => {
         setCategoryFilters,
         sort,
         setSort,
-    }}>
+      }}
+    >
       {children}
     </FilterContext.Provider>
   )

@@ -60,7 +60,7 @@ const Promotion = () => {
   )
 }
 
-const StatBox = ({ label, value }: { label: string, value: number}) => (
+const StatBox = ({ label, value }: { label: string; value: number }) => (
   <li className={classes.statBox}>
     <h4>{value}</h4>
     <p>{label}</p>
