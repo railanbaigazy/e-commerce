@@ -13,7 +13,7 @@ const Categories = ({ categories }: { categories: Category[] }) => {
         <Link href="/products">Show All</Link>
       </div>
       <div className={classes.list}>
-        {categories.slice(0, 3).map(category => (
+        {categories.map(category => (
           <CategoryCard key={category.id} category={category} />
         ))}
       </div>

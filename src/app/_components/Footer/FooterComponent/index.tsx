@@ -13,8 +13,8 @@ import classes from './index.module.scss'
 
 const FooterComponent = ({ footer }: { footer: Footer }) => {
   const pathName = usePathname()
-
   const navItems = footer?.navItems || []
+
   return (
     <footer className={noHeaderFooterUrls.includes(pathName) ? classes.hide : ''}>
       <Gutter>
@@ -39,8 +39,8 @@ const FooterComponent = ({ footer }: { footer: Footer }) => {
       <div className={classes.footer}>
         <Gutter>
           <div className={classes.wrap}>
-            <Link href="/">
-              <Image src="/logo-white.svg" alt="logo" width={170} height={50} />
+            <Link href="https://github.com/railanbaigazy" className={classes.creatorName}>
+              Railan Baigazy
             </Link>
 
             <p>{footer.copyright}</p>
